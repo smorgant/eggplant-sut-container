@@ -4,10 +4,8 @@ set -e
 # VNC default no password
 export X11VNC_AUTH="-nopw"
 
-# Create the SUT
-#if [[ "$SUT_NBR" != "" ]]; then
-#  python3 /tmp/create_sut.py "$SUT_NBR"
-#fi
+# Create the SUT in DAI
+python3 /create_sut.py
 
 # override above if VNC_PASSWORD env var is set (insecure!)
 if [[ "$VNC_PASSWORD" != "" ]]; then
